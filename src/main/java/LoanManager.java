@@ -15,6 +15,18 @@ public class LoanManager {
         }
     }
 
+    public void listMaxLoaner() {
+        double maxLoanAmount = Loan.getMaxLoanAmount();
+        if (loansCount > 0) {
+            System.out.println("Max Loaner(s):");
+        }
+        for (int i = 0; i < loansCount; i++) {
+            if (loans[i].getAmount() == maxLoanAmount) {
+                System.out.println(loans[i].getBorrower());
+            }
+        }
+    }
+
     public void listLoans() {
         for (int i = 0; i < loansCount; i++) {
             if (!loans[i].isPaid()) {
